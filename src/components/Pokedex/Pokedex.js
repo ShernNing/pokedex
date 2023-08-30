@@ -7,6 +7,7 @@ function Pokedex() {
   const [fetchPokemon, setFetchPokemon] = useState(
     "https://pokeapi.co/api/v2/pokemon?limit=20"
   );
+  const [error, setError] = useState("");
 
   const getPokemon = async () => {
     const res = await fetch(fetchPokemon);
@@ -28,12 +29,13 @@ function Pokedex() {
   };
 
   useEffect(() => {
-    getPokemon();
+    getPokemon().catch((error) => setError(error));
   }, []);
 
   return (
     <div className='container'>
       <h1 className='title'>Pokedex</h1>
+      {error ? <p>Error: {error.message}</p> : null}
       <div className='poke-container'>
         {pokemon.map((c, d) => (
           <PokeCard
