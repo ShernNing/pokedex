@@ -35,7 +35,7 @@ function Pokedex() {
   return (
     <div className='container'>
       <h1 className='title'>Pokedex</h1>
-      {error ? <p>Error: {error.message}</p> : null}
+      {error ? `Error: ${(error.message, "Failed to fetch")}` : null}
       <div className='poke-container'>
         {pokemon.map((c, d) => (
           <PokeCard
