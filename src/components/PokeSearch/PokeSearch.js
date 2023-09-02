@@ -18,15 +18,12 @@ function PokeSearch() {
       ability: data.abilities[0].ability.name,
       hp: data.stats[0].base_stat,
       type: data.types[0].type.name,
+      moves: data.moves[0].move.name,
     });
     console.log(pokemon);
 
     setPokemonChosen(true);
   };
-
-  // useEffect(() => {
-  //   searchPokemon().catch((error) => setError(error));
-  // }, []);
 
   return (
     <div className='App'>
@@ -35,11 +32,12 @@ function PokeSearch() {
         <h1>Pokemon Stats</h1>
         <input
           type='text'
+          placeholder='Search here..'
           onChange={(e) => {
             setPokemonName(e.target.value);
           }}
         />
-        <button onClick={searchPokemon}>Search..</button>
+        <button onClick={searchPokemon}>Search</button>
         <div className='display-results'>
           {!pokemonChosen ? (
             ""
@@ -50,6 +48,7 @@ function PokeSearch() {
               <h3>HP: {pokemon.hp}</h3>
               <h3>Type: {pokemon.type}</h3>
               <h3>Ability: {pokemon.ability}</h3>
+              <h3>Moves: {pokemon.moves}</h3>
             </div>
           )}
         </div>
