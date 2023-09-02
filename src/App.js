@@ -1,5 +1,6 @@
 // import { useEffect, useState } from "react";
 // import PokemonThumbnail from "./components/PokemonThumbnails/PokemonThumbnail";
+import PokeSearch from "./components/PokeSearch/PokeSearch";
 import Pokedex from "./components/Pokedex/Pokedex";
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
           Load more
         </button>
       </div> */}
+      <PokeSearch />
       <Pokedex />
     </div>
   );
