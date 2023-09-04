@@ -13,7 +13,7 @@ function Pokedex() {
     const res = await fetch(fetchPokemon);
     const data = await res.json();
 
-    setFetchPokemon("https://pokeapi.co/api/v2/pokemon?offset=20&limit=20");
+    setFetchPokemon(data.next);
     console.log(data);
 
     function showPokemon(results) {
@@ -37,13 +37,13 @@ function Pokedex() {
       <h1 className='title'>Pokedex</h1>
       {error ? `Error: ${(error.message, "Failed to fetch")}` : null}
       <div className='poke-container'>
-        {pokemon.map((c, d) => (
+        {pokemon.map((data, key) => (
           <PokeCard
-            key={d}
-            id={c.id}
-            image={c.sprites.other.dream_world.front_default}
-            name={c.name}
-            type={c.types[0].type.name}
+            key={key}
+            id={data.id}
+            image={data.sprites.other.dream_world.front_default}
+            name={data.name}
+            type={data.types[0].type.name}
           />
         ))}
       </div>

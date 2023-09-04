@@ -1,0 +1,21 @@
+.search {
+  text-transform: capitalize;
+}
+
+.search-results,
+.search,
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.pokedex {
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.search-results img {
+  height: 10rem;
+}

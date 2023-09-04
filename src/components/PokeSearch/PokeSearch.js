@@ -45,10 +45,10 @@ function PokeSearch() {
             <div className='results'>
               <img src={pokemon.img} alt={pokemon.name} />
               <h3>Name: {pokemon.name}</h3>
-              <h3>HP: {pokemon.hp}</h3>
-              <h3>Type: {pokemon.type}</h3>
-              <h3>Ability: {pokemon.ability}</h3>
-              <h3>Moves: {pokemon.moves}</h3>
+              <medium>HP: {pokemon.hp}</medium>
+              <medium>Type: {pokemon.type}</medium>
+              <medium>Ability: {pokemon.ability}</medium>
+              <medium>Moves: {pokemon.moves}</medium>
             </div>
           )}
         </div>

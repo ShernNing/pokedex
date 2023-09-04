@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  text-transform: capitalize;
 }
 
 .card {
@@ -67,4 +68,8 @@ button:hover {
   color: rgb(79, 207, 79);
   background-color: white;
   border: 1.5px solid rgb(79, 207, 79);
+}
+
+.results {
+  line-height: 30px;
 }
