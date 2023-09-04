@@ -27,7 +27,6 @@ function PokeSearch() {
 
   return (
     <div className='App'>
-      {error ? `Error: ${error.message}` : null}
       <div className='content'>
         <h1>Pokemon Stats</h1>
         <input
@@ -45,10 +44,10 @@ function PokeSearch() {
             <div className='results'>
               <img src={pokemon.img} alt={pokemon.name} />
               <h3>Name: {pokemon.name}</h3>
-              <medium>HP: {pokemon.hp}</medium>
-              <medium>Type: {pokemon.type}</medium>
-              <medium>Ability: {pokemon.ability}</medium>
-              <medium>Moves: {pokemon.moves}</medium>
+              <small>HP: {pokemon.hp}</small>
+              <small>Type: {pokemon.type}</small>
+              <small>Ability: {pokemon.ability}</small>
+              <small>Moves: {pokemon.moves}</small>
             </div>
           )}
         </div>
