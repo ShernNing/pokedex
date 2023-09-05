@@ -14,7 +14,7 @@ function Pokedex() {
     const data = await res.json();
 
     setFetchPokemon(data.next);
-    console.log(data);
+    console.log(data, "fetch data");
 
     function showPokemon(results) {
       results.forEach(async (a) => {
@@ -22,10 +22,12 @@ function Pokedex() {
         const data = await res.json();
 
         setPokemon((b) => [...b, data]);
+        // console.log(data, "setPokemon data");
       });
     }
     showPokemon(data.results);
-    console.log(pokemon);
+    console.log(data.results, "data.results");
+    console.log(pokemon, "pokemon state");
   };
 
   useEffect(() => {
@@ -47,7 +49,7 @@ function Pokedex() {
           />
         ))}
       </div>
-      <button className='button' onClick={() => getPokemon()}>
+      <button className='button' onClick={getPokemon}>
         Load more
       </button>
     </div>

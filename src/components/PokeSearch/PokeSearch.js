@@ -10,7 +10,7 @@ function PokeSearch() {
   const searchPokemon = async () => {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
     const data = await res.json();
-    console.log(data);
+    console.log(data, "search data");
 
     setPokemon({
       name: data.name,
@@ -20,7 +20,7 @@ function PokeSearch() {
       type: data.types[0].type.name,
       moves: data.moves[0].move.name,
     });
-    console.log(pokemon);
+    console.log(pokemon, "pokemon search");
 
     setPokemonChosen(true);
   };
