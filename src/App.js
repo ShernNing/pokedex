@@ -5,8 +5,8 @@ import Pokedex from "./components/Pokedex/Pokedex";
 function App() {
   return (
     <div className='app-container'>
-      <PokeSearch />
       <Pokedex />
+      {/* <PokeSearch /> */}
       {/* <PokeSearch2 /> */}
     </div>
   );

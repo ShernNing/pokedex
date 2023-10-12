@@ -7,6 +7,7 @@ function Pokedex() {
   const [fetchPokemon, setFetchPokemon] = useState(
     "https://pokeapi.co/api/v2/pokemon?limit=20"
   );
+  const [name, setName] = useState("");
   const [error, setError] = useState("");
 
   const getPokemon = async () => {
@@ -34,12 +35,21 @@ function Pokedex() {
     getPokemon().catch((error) => setError(error));
   }, []);
 
+  const filteredPokemon = pokemon.filter((data) =>
+    data.name.toLowerCase().includes(name)
+  );
+
   return (
     <div className='container'>
       <h1 className='title'>Pokedex</h1>
       {error ? `Error: ${(error.message, "Failed to fetch")}` : null}
+      <input
+        type='text'
+        placeholder='Search a pokemon..'
+        onChange={(e) => setName(e.target.value)}
+      />
       <div className='poke-container'>
-        {pokemon.map((data, key) => (
+        {filteredPokemon.map((data, key) => (
           <PokeCard
             key={key}
             id={data.id}
